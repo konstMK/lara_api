@@ -8,3 +8,7 @@ $router->get('/', function () use ($router) {
 $router->get('/{city}', 'WeatherController@getWeather');
 $router->post('/weather', 'WeatherController@saveWeather');
 $router->delete('/{city}', 'WeatherController@deleteCity');
+
+//film api routes
+
+$router->get('/film/{film}', 'FilmController@search');

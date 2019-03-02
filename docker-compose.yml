@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+  mariadb:
+    image: 'bitnami/mariadb:latest'
+    ports:
+      - '3306:3306'
+    volumes:
+    - 'mariadb_data:/bitnami'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_DATABASE=film_catalog
+volumes:
+  mariadb_data:
+    driver: local
