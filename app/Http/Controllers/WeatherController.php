@@ -17,7 +17,7 @@ class WeatherController extends Controller
     {
         $this->restClient = $restClient;
     }
-    
+
     public function getWeather($city)
     {
         $weather = $this->restClient

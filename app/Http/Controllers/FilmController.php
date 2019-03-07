@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Film;
 use App\Services\RestClientInterface;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 
@@ -17,7 +18,7 @@ class FilmController extends Controller
         $this->restClient = $restClient;
     }
 
-    public function search($film)
+    public function search($film, Request $request)
     {
         /** @var DB $filmsInDatabase */
         $filmsInDatabase = DB::select(
@@ -49,6 +50,7 @@ class FilmController extends Controller
             'director' => $result['Director'],
             'description' => $result['Plot'],
             'imdb_id' => $result['imdbID'],
+            'poster' => $result['Poster']
         ];
 
 
